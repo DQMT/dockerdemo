@@ -3,4 +3,4 @@ VOLUME /tmp
 WORKDIR /usr/local/tomcat
 ADD ./target/dockerdemo-1.0-SNAPSHOT.war app.war
 EXPOSE 8080
-ENTRYPOINT ["java","-jar","app.jar"]
+ENTRYPOINT ["/usr/local/tomcat/bin/catalina.sh","run"]

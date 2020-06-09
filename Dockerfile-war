@@ -1,6 +1,6 @@
 FROM tomcat:9.0
 VOLUME /tmp
 WORKDIR /usr/local/tomcat
-ADD ./target/dockerdemo-1.0-SNAPSHOT.war app.war
+ADD ./target/dockerdemo-1.0-SNAPSHOT.war webapps/app.war
 EXPOSE 8080
 ENTRYPOINT ["/usr/local/tomcat/bin/catalina.sh","run"]

@@ -12,16 +12,20 @@ import java.util.Date;
 @SpringBootApplication
 @RestController
 public class DockerdemoApplication {
+
     private static String msg;
+    static {
+       SimpleDateFormat sdf = new SimpleDateFormat();
+       sdf.applyPattern("yyyy-MM-dd HH:mm:ss");
+       msg = sdf.format(new Date());
+    }
     @RequestMapping(path = "/",method = RequestMethod.GET)
     public String test() {
         return "Hello world! This application start at： "+msg;
     }
 
 	public static void main(String[] args) {
-        SimpleDateFormat sdf = new SimpleDateFormat();
-        sdf.applyPattern("yyyy-MM-dd HH:mm:ss");
-                msg = sdf.format(new Date());
+
 		SpringApplication.run(DockerdemoApplication.class, args);
 	}
 

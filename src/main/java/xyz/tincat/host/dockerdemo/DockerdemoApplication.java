@@ -13,9 +13,9 @@ import java.util.Date;
 @RestController
 public class DockerdemoApplication {
     private static String msg;
-    @RequestMapping(path = "hello",method = RequestMethod.GET)
+    @RequestMapping(path = "/",method = RequestMethod.GET)
     public String test() {
-        return "Hello world! This app start at： "+msg;
+        return "Hello world! This application start at： "+msg;
     }
 
 	public static void main(String[] args) {
